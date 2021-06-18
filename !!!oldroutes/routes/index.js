@@ -1,12 +1,12 @@
 //Imports............................................
 const router = require('express').Router();
-const apiRoutes = require('./api/api-routes');
+const apiRoutes = require('./api');
 const homeRoutes = require('./home-routes.js');
 
 
 //Navigator..........................................
 router.use('/', homeRoutes);
-router.use('/api', apiRoutes);
+// router.use('/api', apiRoutes);
 
 
 //Exports............................................
