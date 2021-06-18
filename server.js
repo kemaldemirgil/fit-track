@@ -27,8 +27,6 @@ mongoose.connect(
   }
 );
 
-// app.use(htmlRoutes);
-// app.use(apiRoutes);
 // routes
 app.use(routes)
 

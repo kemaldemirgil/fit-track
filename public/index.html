@@ -10,17 +10,24 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-  <title>Fitness Tracker</title>
+  <title>Fit Track</title>
 </head>
 
-<body>
-  <nav>
-    <a href="/">Fitness Tracker</a>
+<body class="home-body">
+  <div class="ui stackable menu">
+    <div class="item">
+      <img src="/images/apple-touch-icon.png">
+    </div>
+    <a class="item" href="/">Home</a>
+    <a class="item" href="/stats">Dashboard</a>
+  </div>
+  <!-- <nav>
+    <a href="/">Home</a>
     <a href="/stats">Dashboard</a>
-  </nav>
+  </nav> -->
   <div class="wrapper workout">
     <header>
-      <h1>Fitness Tracker</h1>
+      <h1>FIT TRACK</h1>
     </header>
     <div class="ui container workout">
       <div class="ui raised card m-auto">
@@ -43,6 +50,9 @@
   </div>
   <div id="toast">
     Workout Added Successfully!
+  </div>
+  <div class="createdby">
+    <small>created by <a href="https://github.com/kemaldemirgil">kemaldemirgil</a></small>
   </div>
   <script src="/js/api.js"></script>
   <script src="/js/workout.js"></script>
