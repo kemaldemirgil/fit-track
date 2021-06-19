@@ -4,9 +4,6 @@ const logger = require("morgan");
 
 const routes = require('./routes');
 
-// const apiRoutes = require("./routes/api-routes.js");
-// const htmlRoutes = require("./routes/home-routes.js")
-
 const PORT = process.env.PORT || 3001
 
 const app = express();

@@ -103,7 +103,7 @@ input {
 }
 
 .home-body {
-  background-image: url(/images/gym.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(51, 0, 0, 0.323)) ,url(/images/gym.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
