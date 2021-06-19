@@ -1,19 +1,25 @@
+// Modules...................................................
 const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 
+// Directories...............................................
 const routes = require('./routes');
 
-const PORT = process.env.PORT || 3001
 
+// Port......................................................
+const PORT = process.env.PORT || 3001
 const app = express();
 
-app.use(logger("dev"));
 
+// Server...................................................
+app.use(routes)
+app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
+// MongoDB.................................................
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost/fittrackdb',
   {
@@ -24,9 +30,7 @@ mongoose.connect(
   }
 );
 
-// routes
-app.use(routes)
-
+// Listener.................................................
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
 });

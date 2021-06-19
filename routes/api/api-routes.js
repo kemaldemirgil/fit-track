@@ -1,8 +1,9 @@
+//Imports............................................
 const Workout = require("../../models/Workout.js");
 const express = require("express");
 const router = express.Router();
 
-
+//GET//http://localhost:3001/api/workouts
 router.get("/workouts", (req, res) => {
     Workout.find({})
     .then( workoutData => {
@@ -13,7 +14,7 @@ router.get("/workouts", (req, res) => {
     });
 });
 
-
+//GET//http://localhost:3001/api/range
 router.get("/workouts/range", (req, res) => {
     Workout.find({})
     .limit(7)
@@ -26,7 +27,7 @@ router.get("/workouts/range", (req, res) => {
 });
 
 
-
+//POST//http://localhost:3001/api/workouts
 router.post("/workouts", (req, res) => {
     Workout.create({})
     .then( workoutData  => {
@@ -38,7 +39,7 @@ router.post("/workouts", (req, res) => {
 });
 
 
-
+//PUT//http://localhost:3001/api/workouts/:id
 router.put("/workouts/:id", ({ body, params }, res) => {
     Workout.findOneAndUpdate(
         { _id: params.id },
@@ -54,8 +55,5 @@ router.put("/workouts/:id", ({ body, params }, res) => {
 });
 
 
-
-
-
-
+//Exports............................................
 module.exports = router;

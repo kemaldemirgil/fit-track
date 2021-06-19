@@ -1,6 +1,8 @@
+//Imports............................................
 const mongoose = require('mongoose');
 const Workout = require('../models/Workout.js');
 
+//MongoDB............................................
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost/fittrackdb',
   {
@@ -11,6 +13,7 @@ mongoose.connect(
   }
 );
 
+//Seeds............................................
 const workoutSeed = [
   {
     day: new Date(new Date().setDate(new Date().getDate() - 9)),

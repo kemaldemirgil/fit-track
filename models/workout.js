@@ -1,6 +1,8 @@
+//Imports............................................
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+//COLLECTION//Workout...............................
 const WorkoutSchema = new Schema(
     {
         day: {
@@ -44,6 +46,7 @@ const WorkoutSchema = new Schema(
 );
 
 
+//HELPER//TotalDuration..............................
 WorkoutSchema.virtual("totalDuration").get(function () {
     let totalDuration = 0;
     this.exercises.forEach((element) => {
@@ -52,6 +55,10 @@ WorkoutSchema.virtual("totalDuration").get(function () {
     return totalDuration;
 });
 
+
+//Config............................................
 const Workout = mongoose.model("Workout", WorkoutSchema);
 
+
+//Exports............................................
 module.exports = Workout;
