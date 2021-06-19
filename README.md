@@ -44,7 +44,7 @@ Bootstrap
 
 ## Images:
 
-View All Employees            | View All Employees            
+Dashboard                     |Home            
 :-------------------------:   |:-------------------------:   
 ![](/public/images/stats.PNG) |![](/public/images/workout.PNG) 
 
