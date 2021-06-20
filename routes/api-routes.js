@@ -13,10 +13,10 @@ router.get('/api/workouts', (req, res) => {
     },
   ])
     .then(workoutData => {
-      res.json(workoutData);
+        res.json(workoutData);
     })
     .catch(err => {
-      res.status(400).json(err);
+        res.status(400).json(err);
     });
 });
 
