@@ -1,7 +1,9 @@
+//Imports............................................
 const router = require('express').Router();
 const Workout = require('../models/Exercise.js');
 
-// API Routes
+
+//GET//http://localhost:3001/api/workouts
 router.get('/api/workouts', (req, res) => {
   Workout.aggregate([
     {
@@ -18,6 +20,8 @@ router.get('/api/workouts', (req, res) => {
     });
 });
 
+
+//GET//http://localhost:3001/api/range
 router.get('/api/workouts/range', (req, res) => {
   Workout.aggregate([
     {
@@ -36,6 +40,8 @@ router.get('/api/workouts/range', (req, res) => {
     });
 });
 
+
+//POST//http://localhost:3001/api/workouts
 router.post('/api/workouts', ({body}, res) => {
   Workout.create(body)
     .then(workoutData => {
@@ -46,6 +52,8 @@ router.post('/api/workouts', ({body}, res) => {
     });
 });
 
+
+//PUT//http://localhost:3001/api/workouts/:id
 router.put('/api/workouts/:id', ({body, params}, res) => {
   Workout.findByIdAndUpdate(
     {_id: params.id},
@@ -59,4 +67,6 @@ router.put('/api/workouts/:id', ({body, params}, res) => {
     });
 });
 
+
+//Exports............................................
 module.exports = router;
