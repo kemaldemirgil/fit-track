@@ -3,8 +3,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 
-// Directories...............................................
-const routes = require('./routes');
 
 
 // Port......................................................
@@ -13,22 +11,23 @@ const app = express();
 
 
 // Server...................................................
-app.use(routes)
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
 // MongoDB.................................................
-mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/fittrackdb',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-  }
-);
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/fitDB', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+});
+// Directories...............................................
+app.use(require("./routes/home-routes.js"));
+app.use(require("./routes/api-routes.js"));
+
+
 
 // Listener.................................................
 app.listen(PORT, () => {

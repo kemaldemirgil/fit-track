@@ -1,10 +1,10 @@
 //Imports............................................
 const mongoose = require('mongoose');
-const Workout = require('../models/Workout.js');
+const Workout = require('../models/Exercise.js');
 
 //MongoDB............................................
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/fittrackdb',
+  process.env.MONGODB_URI || 'mongodb://localhost/fitDB',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
